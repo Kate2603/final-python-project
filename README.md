@@ -160,34 +160,26 @@ Good bye!
 
 --------------------------------------------------------------------
 # Command Functions:
+Command Functions:
 Contacts
 hello: Greets the user.
 Example: hello
-
 add: Adds a new contact.
 Example: add John 1234567890
-
 change: Changes an existing phone number.
 Example: change John 1234567890 0987654321
-
 phone: Shows the phone number(s) for a contact.
 Example: phone John
-
 all: Displays all contacts.
 Example: all
-
 delete: Deletes a contact.
 Example: delete John
-
 birthday: Adds or updates a birthday for a contact.
 Example: birthday John 12.05.1990
-
 show-birthday: Shows the birthday for a contact.
 Example: show-birthday John
-
 birthdays: Shows contacts with birthdays within a specified number of days.
 Example: birthdays 7
-
 Notes
 add-note: Adds a new note.
 Example: add-note Meeting "Discuss project goals"
@@ -201,9 +193,11 @@ add-tag: Adds a tag to a note.
 Example: add-tag Meeting Important
 search-by-tag: Searches notes by tag.
 Example: search-by-tag Important
-
 Command Guessing
-The guess_command function tries to match user input with known commands to offer the closest match.
+The guess_command function tries to match user input with known commands 
+to offer the closest match.
 
 Saving and Loading Data
-The save_data and load_data functions ensure that the data is saved to and loaded from the user's folder, allowing the assistant to be restarted without losing data.
+The save_data and load_data functions ensure that the data is saved to 
+and loaded from the user's folder, allowing the assistant to be restarted 
+without losing data.
