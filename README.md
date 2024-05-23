@@ -138,66 +138,66 @@
 
 
 ------------------------------------------------------------------
-Enter a command: hello
-How can I help you?
-Enter a command: add John 1234567890 1234 Elm St john@example.com 05.12.1985
-Contact added.
-Enter a command: add Jane 0987654321 5678 Oak St jane@example.com 12.05.1990
-Contact added.
-Enter a command: phone John
-Phones for John: 1234567890
-Enter a command: delete John
-Contact John deleted.
-Enter a command: phone John
-Contact John not found.
-Enter a command: all
-Name: Jane, Address: 5678 Oak St, Phones: 0987654321, Email: jane@example.com, Birthday: 12.05.1990
-Enter a command: birthday-reminder 7
-John: 05.12.1985
-Jane: 12.05.1990
-Enter a command: close
-Good bye!
-
---------------------------------------------------------------------
 # Command Functions:
-Command Functions:
-Contacts
-hello: Greets the user.
-Example: hello
-add: Adds a new contact.
-Example: add John 1234567890
-change: Changes an existing phone number.
-Example: change John 1234567890 0987654321
-phone: Shows the phone number(s) for a contact.
-Example: phone John
-all: Displays all contacts.
-Example: all
-delete: Deletes a contact.
-Example: delete John
-birthday: Adds or updates a birthday for a contact.
-Example: birthday John 12.05.1990
-show-birthday: Shows the birthday for a contact.
-Example: show-birthday John
-birthdays: Shows contacts with birthdays within a specified number of days.
-Example: birthdays 7
-Notes
-add-note: Adds a new note.
-Example: add-note Meeting "Discuss project goals"
-find-note: Finds a note by title.
-Example: find-note Meeting
-edit-note: Edits an existing note.
-Example: edit-note Meeting "Discuss project goals and deadlines"
-delete-note: Deletes a note.
-Example: delete-note Meeting
-add-tag: Adds a tag to a note.
-Example: add-tag Meeting Important
-search-by-tag: Searches notes by tag.
-Example: search-by-tag Important
-Command Guessing
-The guess_command function tries to match user input with known commands 
-to offer the closest match.
+General Interaction
 
-Saving and Loading Data
-The save_data and load_data functions ensure that the data is saved to 
-and loaded from the user's folder, allowing the assistant to be restarted 
-without losing data.
+hello
+exit
+close
+
+Contact Management
+Adding Contacts
+add <name> <phone> [address] [email] [birthday]:
+
+add John 1234567890 1234ElmSt john@example.com 05.12.1985
+
+add Jeine 1515151515 1987ArreySt jaine@example.com 15.02.1984
+
+add Simon 6564987854 2568MorsSt simon@example.com 08.09.1991
+
+Changing Phone Numbers
+change John 0987654321
+
+Viewing Phone Numbers
+phone John
+
+Showing All Contacts
+all
+
+Birthday Management
+
+Show or change Birthday
+birthday John 12.05.1990
+
+Listing Upcoming Birthdays
+birthdays 5
+
+Deleting Contacts
+delete John
+
+Note Management
+Adding Notes
+
+add_note Meeting "Discuss project goals"
+add_note Meeting "Meeting with John"
+
+Finding Notes
+find_note Meeting 
+
+show_notes
+
+Editing Notes
+edit_note Meeting "Discuss project objectives"
+
+Adding Tags to Notes
+add_tag Meeting project
+
+Searching Notes by Tags
+search_by_tag project
+
+Deleting Notes
+delete_note Meeting
+
+
+exit
+close
