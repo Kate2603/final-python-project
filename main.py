@@ -1,6 +1,9 @@
-import data_handling
+import pickle
+from prompt_tool import prompt
 from notebook.notebook import Notebook
 from notebook.address_book import AddressBook
+from prompt_tool import RainbowLexer, completer
+from data_handling import load_data, save_data
 
 def parse_input(user_input):
     command_parts = user_input.split(' ', 1)
@@ -10,10 +13,10 @@ def parse_input(user_input):
 
 def main():
     global address_book, days
-    address_book, notebook = data_handling.load_data()
+    address_book, notebook = load_data()
 
     while True:
-        user_input = input("Enter a command: ").strip()
+        user_input = prompt("Enter a command: ", lexer=RainbowLexer(), completer=completer).strip()
         command, args = parse_input(user_input)
 
         if command == 'hello':
@@ -24,8 +27,6 @@ def main():
             address = args[2]
             email = args[3] if len(args) > 3 else None
             birthday = args[4] if len(args) > 4 else None
-            if len(args) > 5:
-                birthday = args[5]
             result = address_book.add_contact(name, phone, address, email, birthday)
             print(result)
         elif command == 'delete':
@@ -94,7 +95,7 @@ def main():
             result = notebook.search_by_tag(tag)
             print(result)
         elif command in ["close", "exit"]:
-            data_handling.save_data(address_book, notebook)
+            save_data(address_book, notebook)
             print("Goodbye!")
             break
         else:
