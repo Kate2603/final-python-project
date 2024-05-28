@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "notebook_package"
+version = "0.1"
+description = "A simple notebook and address book application."
+authors = [
+    {name = "Your Name", email = "your.email@example.com"},
+]
+readme = "README.md"
+requires-python = ">=3.6"
+license = {text = "MIT"}
+
+[project.urls]
+homepage = "https://example.com/your-project"
+
+[project.dependencies]
+dependencies = [
+    "prompt_toolkit==3.0.43",
+    "wcwidth==0.2.13"
+]
+
+[project.entry-points.console_scripts]
+notebook = "notebook.notebook:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
